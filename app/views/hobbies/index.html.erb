@@ -1,17 +1,6 @@
-<h1>今、話題の趣味！</h1>
 <% @hobbies.each do |h| %>
-  <p><%= h.name %></p>
-<% end %>
-<%= form_for @hobby,:url => {:action => :create}, html:{class:'form-inline'} do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name , class:'form-control' %>
-    <%= f.submit class:'btn btn-default' %>
-  </div>
-<% end %>
-<% if logged_in? %>
-  <%= current_user.username %>
-  <%= link_to 'ログアウト', logout_path %>
-<% else %>
-  <%= link_to 'Twitterでログイン', 'auth/twitter'%>
+  <h2><%= h.name %></h2>
+  <p>詳細: <%= h.about %></p>
+  <p>いいね: <%= h.goodNum %></p>
+  <%= button_to "削除", { :action => :destroy, :id => h.id }, class:'btn btn-default' %>
 <% end %>
