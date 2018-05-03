@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+@hobby = Hobby.new
+@hobby.name = '鳩を追いかける'
+@hobby.about = 'きなこが一心不乱に鳩を追いかけるんだよ！'
+@hobby.goodNum = 14
+@hobby.save

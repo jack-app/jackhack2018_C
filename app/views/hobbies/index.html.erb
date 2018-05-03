@@ -1,0 +1,9 @@
+<h1>今、話題の趣味！</h1>
+<% @hobbies.each do |h| %>
+  <p><%= h.name %></p>
+<% end %>
+<%= form_for @hobby,:url => {:action => :create} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
