@@ -6,6 +6,6 @@ class HobbiesController < ApplicationController
 
   def create
     @hobby = Hobby.create(params.require(:hobby).permit(:name))
-    redirect_to '/hobby/index'
+    redirect_to root_path
   end
 end
