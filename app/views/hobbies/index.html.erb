@@ -1,6 +1,87 @@
-<% @hobbies.each do |h| %>
-  <h2><%= h.name %></h2>
-  <p>詳細: <%= h.about %></p>
-  <p>いいね: <%= h.goodNum %></p>
-  <%= button_to "削除", { :action => :destroy, :id => h.id }, class:'btn btn-default' %>
-<% end %>
+<div class="all">
+  <div class="hobbies_titles">
+    <p class="hobbies_title">みんなの趣味</p>
+  </div>
+
+<!--
+<div class="row">
+  <div class="col-md-1">1</div>
+  <div class="col-md-1">2</div>
+  <div class="col-md-1">3</div>
+  <div class="col-md-1">4</div>
+  <div class="col-md-1">5</div>
+  <div class="col-md-1">6</div>
+  <div class="col-md-1">7</div>
+  <div class="col-md-1">8</div>
+  <div class="col-md-1">9</div>
+  <div class="col-md-1">10</div>
+  <div class="col-md-1">11</div>
+  <div class="col-md-1">12</div>
+</div>
+-->
+
+<!--
+<div class="row">
+  <div class="col-md-4">1</div>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-1">1</div>
+      <div class="col-md-1">2</div>
+      <div class="col-md-1">3</div>
+      <div class="col-md-1">4</div>
+      <div class="col-md-1">5</div>
+      <div class="col-md-1">6</div>
+      <div class="col-md-1">7</div>
+      <div class="col-md-1">8</div>
+      <div class="col-md-1">9</div>
+      <div class="col-md-1">10</div>
+      <div class="col-md-1">11</div>
+      <div class="col-md-1">12</div>
+    </div>
+  </div>
+  <div class="col-md-4">3</div>
+  </div>
+-->
+
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="hobbies_search">
+      <p>
+        <input type="search" name="search" placeholder="キーワードを入力" size="20">
+        <input type="submit" name="submit" value="検索">
+      </p>
+      <p>
+        <ul>
+          <li><input type="radio" name="sort" value="人気順">人気順　</li>
+          <li><input type="radio" name="sort" value="新着順">新着順</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="hobbies_contents">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <table class="table table-striped table-bordered" width="80%">
+          <tbody>
+            <% @hobbies.each do |h| %>
+            <tr>
+              <td><%= h.name %></td>
+              <td><button type="button" class="btn btn-warning">いいね</button>: <%= h.goodNum %></td>
+
+              <td><%= button_to "削除", { :action => :destroy, :id => h.id }, class:'btn btn-default' %></td>
+
+              <td><button type="button" class="btn btn-success">登録</button></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+</div>
