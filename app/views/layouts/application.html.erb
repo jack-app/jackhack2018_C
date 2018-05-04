@@ -8,23 +8,35 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <nav class="navbar  navbar-default">
+  <body style="padding-top: 70px;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
       <ul class="nav navbar-nav">
-      <li class="active"><%= link_to 'HOME', root_path %></li>
-      <li><a href="/hobbies">HOBBIES</a></li>
-      <li><a href="/titles">TITLES</a></li>
-      <li><%= link_to 'USER', '/users'%></li>
-      <% if logged_in? %>
+        <li class="active">
+          <%= link_to 'HOME', root_path %>
+        </li>
+        <li>
+          <%= link_to 'HOBBIES', controller: 'hobbies', action: 'index' %>
+        </li>
+        <li>
+          <%= link_to 'TITLES', controller: 'titles', action: 'index' %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+        <li>
+          <%= link_to 'MYPAGE', controller: 'users', action: 'show', id: current_user.id %>
+        </li>
         <li>
           <%= link_to 'LOGOUT', logout_path %>
         </li>
-      <% else %>
+        <% else %>
         <li>
-        <%= link_to 'LOGIN(Twitter)', 'auth/twitter'%>
+          <%= link_to 'LOGIN(Twitter)', 'auth/twitter'%>
         </li>
-      <% end %>
+        <% end %>
       </ul>
+      </div>
     </nav>
     <div class="container">
       <%= yield %>
