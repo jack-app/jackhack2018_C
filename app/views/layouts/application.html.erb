@@ -12,21 +12,23 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li class="<%= 'active' if current_page?(root_path) %>">
           <%= link_to 'HOME', root_path %>
         </li>
-        <li>
-          <%= link_to 'HOBBIES', controller: 'hobbies', action: 'index' %>
+        <li class="<%= 'active' if current_page?(hobbies_path) %>">
+          <%= link_to 'HOBBIES', hobbies_path %>
         </li>
-        <li>
-          <%= link_to 'TITLES', controller: 'titles', action: 'index' %>
+        <li class="<%= 'active' if current_page?(titles_path) %>">
+          <%= link_to 'TITLES', titles_path %>
         </li>
+        <% if logged_in? %>
+        <li class="<%= 'active' if current_page?(controller: 'users', action: 'show', id: current_user.id) %>">
+          <%= link_to 'MYPAGE', controller: "users", action: "show", id: current_user.id %>
+        </li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-        <li>
-          <%= link_to 'MYPAGE', controller: 'users', action: 'show', id: current_user.id %>
-        </li>
         <li>
           <%= link_to 'LOGOUT', logout_path %>
         </li>
@@ -38,6 +40,7 @@
       </ul>
       </div>
     </nav>
+
     <div class="container">
       <%= yield %>
     </div>
