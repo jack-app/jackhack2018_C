@@ -1,6 +1,51 @@
-<h1><%= @user.username %></h1>
-<%= image_tag(@user.image_url) %>
-<ul>
-  <li>provider : <%= @user.provider %></li>
-  <li>uid      : <%= @user.uid %></li>
-</ul>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag(@user.image_url, width: "250", height: "250") %>
+    <h1 class="users-name"><%= @user.username %></h1>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <table class="table table-bordered">
+        <thead>
+          <th class="col-md-1">#</th>
+          <th class="col-md-4">
+            my趣味
+          </th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>洗濯機がぐるぐる回転するのを眺める</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+             <td>Enterキーをかっこ良く押す</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <table class="table table-bordered">
+        <thead>
+          <th class="col-md-1">#</th>
+          <th class="col-md-4">
+            my称号
+          </th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>称号マスター</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+             <td>洗濯機プロ</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

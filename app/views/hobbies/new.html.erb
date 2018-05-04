@@ -1,9 +1,29 @@
-<h1>今、話題の趣味！</h1>
-<h2><%= @showHobby.name %></h2>
-<%= form_for @hobby,:url => {:action => :create}, html:{class:'form-inline'} do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name , class:'form-control' %>
-    <%= f.submit class:'btn btn-default' %>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>今、話題の趣味は…</h1>
   </div>
-<% end %>
+</div>
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10">
+    <p class="text-center" style="font-size: 100px"><%= @showHobby.name %></p>
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <p>あなたの一押しの趣味を教えてください</p>
+  </div>
+</div>
+<div class="row">
+  <%= form_for @hobby,:url => {:action => :create} do |f| %>
+  <div class="col-sm-11">
+    <%= f.text_field :name , class:'form-control' %>
+  </div>
+  <div class="col-sm-1">
+    <%= f.submit '投稿', class:'btn btn-default' %>
+  </div>
+  <% end %>
+</div>
