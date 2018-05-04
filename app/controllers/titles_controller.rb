@@ -14,6 +14,9 @@ class TitlesController < ApplicationController
 
   def destroy
     @title = Title.find(params[:id])
+    @title.user_titles.each do |ut|
+      ut.destroy
+    end
     @title.destroy
     redirect_to root_path
   end

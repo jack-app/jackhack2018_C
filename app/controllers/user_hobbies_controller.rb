@@ -1,7 +1,7 @@
 class UserHobbiesController < ApplicationController
     def create
       @userHobby = UserHobby.new
-      @userHobby = UserHobby.create(user: current_user, title: Title.find(params[:id]))
+      @userHobby = UserHobby.create(user: current_user, hobby: Hobby.find(params[:id]))
       redirect_to root_path
     end
 

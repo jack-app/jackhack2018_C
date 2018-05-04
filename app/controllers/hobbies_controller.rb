@@ -15,6 +15,9 @@ class HobbiesController < ApplicationController
 
   def destroy
     @hobby = Hobby.find(params[:id])
+    @hobby.user_hobbies.each do |uh|
+      uh.destroy
+    end
     @hobby.destroy
     redirect_to root_path
   end
