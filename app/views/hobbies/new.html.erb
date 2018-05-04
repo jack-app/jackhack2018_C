@@ -7,9 +7,3 @@
     <%= f.submit class:'btn btn-default' %>
   </div>
 <% end %>
-<% if logged_in? %>
-  <%= current_user.username %>
-  <%= link_to 'ログアウト', logout_path %>
-<% else %>
-  <%= link_to 'Twitterでログイン', 'auth/twitter'%>
-<% end %>

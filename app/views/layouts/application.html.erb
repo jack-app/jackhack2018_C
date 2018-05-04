@@ -9,6 +9,23 @@
   </head>
 
   <body>
+    <nav class="navbar  navbar-default">
+      <ul class="nav navbar-nav">
+      <li class="active"><%= link_to 'HOME', root_path %></li>
+      <li><a href="/hobbies">HOBBIES</a></li>
+      <li><a href="/titles">TITLES</a></li>
+      <li><%= link_to 'USER', '/users'%></li>
+      <% if logged_in? %>
+        <li>
+          <%= link_to 'LOGOUT', logout_path %>
+        </li>
+      <% else %>
+        <li>
+        <%= link_to 'LOGIN(Twitter)', 'auth/twitter'%>
+        </li>
+      <% end %>
+      </ul>
+    </nav>
     <div class="container">
       <%= yield %>
     </div>
