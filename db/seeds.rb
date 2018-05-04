@@ -12,6 +12,66 @@
 @hobby.goodNum = 14
 @hobby.save
 
+@hobby = Hobby.new
+@hobby.name = '洗濯機の中身がぐるぐる回るのを眺める'
+@hobby.about =
+@hobby.goodNum = 203
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '石と間違えてスマホを川に投げて落ち込むシミュレーションをする'
+@hobby.about =
+@hobby.goodNum = 7
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '撮り鉄を撮る'
+@hobby.about =
+@hobby.goodNum = 2
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '罰ゲームのときに3回回ってニャンを毎回提案する'
+@hobby.about =
+@hobby.goodNum = 0
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '一番飛ばない紙飛行機を作る'
+@hobby.about =
+@hobby.goodNum = 133
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = 'キーボードでA-Zまで入力'
+@hobby.about =
+@hobby.goodNum = 37
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = 'Enterキーを気持ちよく鳴らす'
+@hobby.about =
+@hobby.goodNum = 10
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '牛乳瓶の蓋を集める'
+@hobby.about =
+@hobby.goodNum = 133
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '保護フィルム貼りタイムアタック'
+@hobby.about =
+@hobby.goodNum = 69
+@hobby.save
+
+@hobby = Hobby.new
+@hobby.name = '奥に陳列された商品を手前に並べなおす'
+@hobby.about =
+@hobby.goodNum = 29
+@hobby.save
+
 @title = Title.new
 @title.name = '趣味コレクター'
 @title.about = '常人には理解できない量の趣味を持っている人に与えられる称号'
@@ -29,5 +89,5 @@
 
 @title = Title.new
 @title.name = 'できるだけ小さい練り消しを作れたで賞'
-@title.about = '達人だからこそできるパソコンのタイピング'
+@title.about = '練るという行為の概念を拡張した存在に'
 @title.save
