@@ -43,7 +43,7 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass'
 
 # Windows
-# gem 'wdm', '>= 0.1.0'
+gem 'wdm', '>= 0.1.0'
 gem 'coffee-script-source', '~> 1.8.0'
 # --------------------
 
