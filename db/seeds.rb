@@ -11,3 +11,8 @@
 @hobby.about = 'きなこが一心不乱に鳩を追いかけるんだよ！'
 @hobby.goodNum = 14
 @hobby.save
+
+@title = Title.new
+@title.name = '趣味コレクター'
+@title.about = '常人には理解できない量の趣味を持っている人に与えられる称号'
+@title.save

@@ -1,0 +1,5 @@
+<% @titles.each do |t| %>
+  <h2><%= t.name %></h2>
+  <p>詳細: <%= t.about %></p>
+  <%= button_to "削除", { :action => :destroy, :id => t.id }, class:'btn btn-default' %>
+<% end %>

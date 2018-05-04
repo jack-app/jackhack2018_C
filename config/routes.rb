@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  get 'titles' => 'titles#index'
+  post 'titles/index' => 'titles#destroy'
+  get 'titles/new'
+  post 'titles/new' => 'titles#create'
+
+  get 'users' => 'users#index'
   get 'users/show/:id' => 'users#show'
 
-  get 'hobbies/index'
+  get 'hobbies' => 'hobbies#index'
   post 'hobbies/index' => 'hobbies#destroy'
   get 'hobbies/new'
   post 'hobbies/new' => 'hobbies#create'
