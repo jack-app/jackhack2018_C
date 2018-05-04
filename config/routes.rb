@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'titles/create' => 'titles#create'
 
   get '/users' => 'users#index'
-  get 'users/show/:id' => 'users#show'
+  get '/user' => 'users#show'
 
   get '/hobbies' => 'hobbies#index'
   post 'hobbies/destroy' => 'hobbies#destroy'

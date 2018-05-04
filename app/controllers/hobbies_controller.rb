@@ -19,6 +19,6 @@ class HobbiesController < ApplicationController
       uh.destroy
     end
     @hobby.destroy
-    redirect_to root_path
+    redirect_to hobbies_path
   end
 end

@@ -9,7 +9,7 @@ class TitlesController < ApplicationController
 
   def create
     @title = Title.create(params.require(:title).permit(:name, :about))
-    redirect_to root_path
+    redirect_to titles_new_path
   end
 
   def destroy
@@ -18,6 +18,6 @@ class TitlesController < ApplicationController
       ut.destroy
     end
     @title.destroy
-    redirect_to root_path
+    redirect_to titles_path
   end
 end
