@@ -16,3 +16,18 @@
 @title.name = '趣味コレクター'
 @title.about = '常人には理解できない量の趣味を持っている人に与えられる称号'
 @title.save
+
+@title = Title.new
+@title.name = '洗濯機ぐるぐるガン見Award'
+@title.about = ' 洗濯機をずっと見ていられる人に送られるありがたい賞'
+@title.save
+
+@title = Title.new
+@title.name = '英語をA-Zまで入力早かったで賞'
+@title.about = '達人だからこそできるパソコンのタイピング'
+@title.save
+
+@title = Title.new
+@title.name = 'できるだけ小さい練り消しを作れたで賞'
+@title.about = '達人だからこそできるパソコンのタイピング'
+@title.save
