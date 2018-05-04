@@ -1,3 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users-name {
+  font-size: 64px;
+  height: 64px;
+  width: 300px;
+  padding-left: 20px;
+}
+.users-ss{
+  font-size: 64px;
+  background-color: #00FF00;
+  list-style: none;
+}
