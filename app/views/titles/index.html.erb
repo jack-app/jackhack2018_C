@@ -1,4 +1,4 @@
-<header>
+<div class="row">
   <h2> 称号一覧 </h2>
   <h3> 挑戦しなければ、君たちの常識は変わらない </h3>
   <p> 頭おかしいクレイジーな人たちが集まる場所として機能することで、<br>
@@ -8,16 +8,18 @@
   私たちはそんな人のためにこんな言葉を用意しました。<br>
   <h2><b> "Crazy of the Year"</h2></b>
   称号をたくさん取った人に与えられる言葉です。<br>
-  ぜひ沢山の賞をとってくださいね。
+  ぜひ沢山の称号をとってくださいね。
   </p>
-</header>
+</div>
 
-<body>
+<div class="row">
 <% @titles.each do |t| %>
-  <h2><%= t.name %></h2>
-  <p>詳細: <%= t.about %></p>
-  <%= button_to "削除", { :action => :destroy, :id => t.id }, class:'btn btn-default' %>
+  <div class="container-fluid">
+    <div class="row">
+      <h2><%= t.name %></h2>
+      <p>詳細: <%= t.about %></p>
+      <%= button_to "削除", { :action => :destroy, :id => t.id }, class:'btn btn-default' %>
+    </div>
+  </div>
 <% end %>
-</body>
-
-
+</div>
