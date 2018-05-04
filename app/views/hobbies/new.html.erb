@@ -4,16 +4,17 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-10">
+  <div class="col-sm-10 col-md-offset-1">
     <p class="text-center" style="font-size: 100px"><%= @showHobby.name %></p>
-  </div>
-  <div class="col-sm-1">
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-1 col-md-offset-10" style="font-size: 20px;">
+    <%= link_to 'more...', hobbies_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12" style="font-size: 24px;">
     <p>あなたの一押しの趣味を教えてください</p>
   </div>
 </div>
