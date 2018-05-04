@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .hobbies_title{
   color: #000099;
-  margin: 0.8% 0 0.8% 0;
+  margin: 2px 0 ;
   font-size: 40px;
 }
 
@@ -17,13 +17,15 @@
 
 .hobbies_search{
   height: 50px;
-  padding: 15px;
+  padding: 5px 0;
   text-align: center;
+  font-size: 16px;
 }
 
 .hobbies_contents tr:nth-child(2n+1){
    background:#eff6f9;
  }
+
 .hobbies_contents tr:nth-child(2n){
   background:#d7f5fb;
 }
