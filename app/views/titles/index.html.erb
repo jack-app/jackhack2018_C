@@ -17,7 +17,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-10">
-        <h2><%= t.name %></h2>
+        <h2>
+          <%= t.name %>
+          <% t.user_titles.each do |ut| %>
+          <%= link_to image_tag(ut.user.image_url, height: 30, width: 30), controller: :users, action: :show, id: ut.user.id %>
+          <% end %>
+        </h2>
         <p>詳細: <%= t.about %></p>
       </div>
       <div class="col-sm-1">

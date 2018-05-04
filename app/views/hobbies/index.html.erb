@@ -11,7 +11,7 @@
       </p>
       <p>
         <ul>
-          <li><input type="radio" name="sort" value="人気順">人気順　</li>
+          <li><input type="radio" name="sort" value="人気順">人気順</li>
           <li><input type="radio" name="sort" value="新着順">新着順</li>
         </ul>
       </p>
@@ -21,22 +21,33 @@
 </div>
 <div class="hobbies_contents">
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-
-        <table class="table table-bordered" width="80%">
+    <div class="col-md-10 col-md-offset-1">
+        <table class="table table-bordered table-striped">
           <tbody>
             <% @hobbies.each do |h| %>
             <tr>
-              <td><%= h.name %></td>
-              <td width="16%"><button type="button" class="btn btn-warning">いいね</button>: <%= h.goodNum %></td>
+              <td>
+                <div>
+                  <span style="font-size: 30px;"><%= h.name %></span>
+                  <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-heart-empty"></span></button><%= h.goodNum %>
+                </div>
+                <div>
+                  <div class="col-md-10" style="font-size: 30;">
+<!--                    この趣味の人：-->
+                    <% h.user_hobbies.each do |uh| %>
+                    <%= link_to image_tag(uh.user.image_url, height: 30, width: 30), controller: :users, action: :show, id: uh.user.id %>
+                    <% end %>
+                  </div>
+                  <%= button_to "自分も始めてみる", { controller: :user_hobbies, action: :create, id: h.id }, class:'col-md-2 btn btn-success btn-sm' %>
+                </div>
+              </td>
+              <!--
               <td><%= button_to "削除", { action: :destroy, id: h.id }, class:'btn btn-default' %></td>
-              <td width="7%"><%= button_to "登録", { controller: :user_hobbies, action: :create, id: h.id }, class:'btn btn-success' %></td>
+              -->
             </tr>
             <% end %>
           </tbody>
         </table>
     </div>
-    <div class="col-md-1"></div>
   </div>
 </div>
