@@ -73,9 +73,9 @@
               <td><%= h.name %></td>
               <td><button type="button" class="btn btn-warning">いいね</button>: <%= h.goodNum %></td>
 
-              <td><%= button_to "削除", { :action => :destroy, :id => h.id }, class:'btn btn-default' %></td>
+              <td><%= button_to "削除", { action: :destroy, id: h.id }, class:'btn btn-default' %></td>
 
-              <td><button type="button" class="btn btn-success">登録</button></td>
+              <td><%= button_to "登録", { controller: :user_hobbies, action: :create, id: h.id }, class:'btn btn-success' %></td>
             </tr>
             <% end %>
           </tbody>

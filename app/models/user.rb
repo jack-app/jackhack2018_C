@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :hobbys, through: :user_hobbies
+  has_many :user_hobbies
 
   def self.find_or_create_from_auth_hash(auth_hash)
    provider = auth_hash[:provider] #providerはどのサービスで認証したのかを見分けるもの
