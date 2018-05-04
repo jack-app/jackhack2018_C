@@ -30,9 +30,7 @@
             <tr>
               <td><%= h.name %></td>
               <td width="16%"><button type="button" class="btn btn-warning">いいね</button>: <%= h.goodNum %></td>
-              <!--
               <td><%= button_to "削除", { action: :destroy, id: h.id }, class:'btn btn-default' %></td>
-                -->
               <td width="7%"><%= button_to "登録", { controller: :user_hobbies, action: :create, id: h.id }, class:'btn btn-success' %></td>
             </tr>
             <% end %>

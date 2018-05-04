@@ -8,7 +8,6 @@
     <div class="row">
       <table class="table table-bordered table-striped">
         <thead>
-<!--          <th class="col-md-1">#</th> -->
           <th class="col-md-4">
             my趣味
           </th>
@@ -17,7 +16,6 @@
         <tbody>
           <% @user.user_hobbies.each do |uh| %>
           <tr>
-<!--            <th scope="row"><%= uh.hobby.id %></th> -->
             <td><%= uh.hobby.name %></td>
             <td><%= button_to "削除", { controller: :user_hobbies, action: :destroy, id: uh.id }, class:'btn btn-default' %></td>
           </tr>
@@ -29,20 +27,18 @@
     <div class="row">
       <table class="table table-bordered table-striped">
         <thead>
-          <th class="col-md-1">#</th>
           <th class="col-md-4">
             my称号
           </th>
+          <th class="col-md-1"></th>
         </thead>
         <tbody>
+          <% @user.user_titles.each do |ut| %>
           <tr>
-            <th scope="row">1</th>
-            <td>称号マスター</td>
+            <td><%= ut.title.name %></td>
+            <td><%= button_to "削除", { controller: :user_titles, action: :destroy, id: ut.id }, class:'btn btn-default' %></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-             <td>洗濯機プロ</td>
-          </tr>
+          <% end %>
 
         </tbody>
       </table>

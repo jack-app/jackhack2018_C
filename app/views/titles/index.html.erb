@@ -6,7 +6,7 @@
   発信出来る場所がないと困っている人たちを助けたいと思いました。<br>
   いつだって私たちは自分の趣味を自信を持って伝えたい。<br>
   私たちはそんな人のためにこんな言葉を用意しました。<br>
-  <h2><b> "Crazy of the Year"</h2></b>
+  <h2><b> "Crazy of the Year"</b></h2>
   称号をたくさん取った人に与えられる言葉です。<br>
   ぜひ沢山の称号をとってくださいね。
   </p>
@@ -16,9 +16,16 @@
 <% @titles.each do |t| %>
   <div class="container-fluid">
     <div class="row">
-      <h2><%= t.name %></h2>
-      <p>詳細: <%= t.about %></p>
-      <%= button_to "削除", { :action => :destroy, :id => t.id }, class:'btn btn-default' %>
+      <div class="col-sm-10">
+        <h2><%= t.name %></h2>
+        <p>詳細: <%= t.about %></p>
+      </div>
+      <div class="col-sm-1">
+        <%= button_to "削除", { action: :destroy, id: t.id }, class:'btn btn-default' %>
+      </div>
+      <div class="col-sm-1">
+        <%= button_to "習得", { controller: :user_titles, action: :create, id: t.id }, class:'btn btn-default' %>
+      </div>
     </div>
   </div>
 <% end %>

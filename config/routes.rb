@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post 'user_hobbies/create' => 'user_hobbies#create'
   post 'user_hobbies/destroy' => 'user_hobbies#destroy'
 
+  post 'user_titles/create' => 'user_titles#create'
+  post 'user_titles/destroy' => 'user_titles#destroy'
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
