@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
   get '/titles' => 'titles#index'
-  post 'titles/index' => 'titles#destroy'
+  post 'titles/destroy' => 'titles#destroy'
   get 'titles/new'
-  post 'titles/new' => 'titles#create'
+  post 'titles/create' => 'titles#create'
 
   get '/users' => 'users#index'
   get 'users/show/:id' => 'users#show'
 
   get '/hobbies' => 'hobbies#index'
-  post 'hobbies/index' => 'hobbies#destroy'
+  post 'hobbies/destroy' => 'hobbies#destroy'
   get 'hobbies/new'
-  post 'hobbies/new' => 'hobbies#create'
+  post 'hobbies/create' => 'hobbies#create'
+
+  post 'user_hobbies/create' => 'user_hobbies#create'
+  post 'user_hobbies/destroy' => 'user_hobbies#destroy'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

@@ -2,26 +2,26 @@
 <div class="row">
   <div class="col-md-4">
     <%= image_tag(@user.image_url, width: "250", height: "250") %>
-    <h1 class="users-name"><%= @user.username %></h1>
+    <p class="users-name"><%= @user.username %></p>
   </div>
   <div class="col-md-8">
     <div class="row">
       <table class="table table-bordered table-striped">
         <thead>
-          <th class="col-md-1">#</th>
+<!--          <th class="col-md-1">#</th> -->
           <th class="col-md-4">
             my趣味
           </th>
+          <th class="col-md-1"></th>
         </thead>
         <tbody>
+          <% @user.user_hobbies.each do |uh| %>
           <tr>
-            <th scope="row">1</th>
-            <td>洗濯機がぐるぐる回転するのを眺める</td>
+<!--            <th scope="row"><%= uh.hobby.id %></th> -->
+            <td><%= uh.hobby.name %></td>
+            <td><%= button_to "削除", { controller: :user_hobbies, action: :destroy, id: uh.id }, class:'btn btn-default' %></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-             <td>Enterキーをかっこ良く押す</td>
-          </tr>
+          <% end %>
 
         </tbody>
       </table>
