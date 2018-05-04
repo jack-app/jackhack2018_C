@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/users' => 'users#index'
   get '/user' => 'users#show'
+  get '/users/:id' => 'users#show'
 
   get '/hobbies' => 'hobbies#index'
   post 'hobbies/destroy' => 'hobbies#destroy'
