@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :hobbys, through: :user_hobbies
+  has_many :hobbies, through: :user_hobbies
   has_many :user_hobbies
   has_many :titles, through: :user_titles
   has_many :user_titles

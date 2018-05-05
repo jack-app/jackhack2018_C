@@ -45,6 +45,7 @@
                   <%= button_to "自分も始めてみる", { controller: :user_hobbies, action: :create, id: h.id }, class:'col-md-2 btn btn-success btn-sm' %>
                 </div>
               </td>
+              <td><%= h.user ? h.user.username : '' %></td>
               <td><%= button_to "削除", { action: :destroy, id: h.id }, class:'btn btn-default' %></td>
             </tr>
             <% end %>
