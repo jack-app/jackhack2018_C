@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show'
 
   get '/hobbies' => 'hobbies#index'
-  post 'hobbies/destroy' => 'hobbies#destroy'
+  post '/hobbies' => 'hobbies#index'
   get 'hobbies/new'
   post 'hobbies/create' => 'hobbies#create'
+  post 'hobbies/destroy' => 'hobbies#destroy'
 
   post 'user_hobbies/create' => 'user_hobbies#create'
   post 'user_hobbies/destroy' => 'user_hobbies#destroy'

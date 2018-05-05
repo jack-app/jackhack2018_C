@@ -1,6 +1,11 @@
 class HobbiesController < ApplicationController
   def index
-    @hobbies = Hobby.all
+    search = params[:search]
+    if search
+      @hobbies = Hobby.search(search[:key])
+    else
+      @hobbies = Hobby.all
+    end
   end
 
   def new
