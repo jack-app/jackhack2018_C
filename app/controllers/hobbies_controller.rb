@@ -13,16 +13,8 @@ class HobbiesController < ApplicationController
     @hobby = Hobby.new
   end
 
-  include ApplicationHelper
   def create
-    if logged_in? then
-      key = {owner: current_user}
-      @hobby = Hobby.create(key.update(params.require(:hobby).permit(:name)))
-      @userHobby = UserHobby.new
-      @userHobby = UserHobby.find_or_create_by(user: current_user, hobby: @hobby)
-    else
-      @hobby = Hobby.create(params.require(:hobby).permit(:name))
-    end
+    @hobby = Hobby.create(params.require(:hobby).permit(:name))
     redirect_to hobbies_path
   end
 
