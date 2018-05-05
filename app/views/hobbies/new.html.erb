@@ -3,17 +3,20 @@
     <h1>今、話題の趣味は…</h1>
   </div>
 </div>
-<div class="row">
+<div class="row top30">
   <div class="col-sm-10 col-md-offset-1">
     <p class="text-center" style="font-size: 100px"><%= @showHobby.name %></p>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-1 col-md-offset-10" style="font-size: 20px;">
-    <%= link_to 'more...', hobbies_path %>
+<div class="row top30">
+  <%= button_to "早速趣味にする！", { controller: :user_hobbies, action: :create, id: @showHobby.id }, class:'col-md-6 col-md-offset-3 btn btn-success btn-lg' %>
+</div>
+<div class="row top30">
+  <div class="col-sm-2 col-md-offset-9" style="font-size: 20px;">
+    <%= link_to '他の趣味も見る', hobbies_path %>
   </div>
 </div>
-<div class="row">
+<div class="row top50">
   <div class="col-sm-12" style="font-size: 24px;">
     <p>あなたの一押しの趣味を教えてください</p>
   </div>
@@ -27,4 +30,6 @@
     <%= f.submit '投稿', class:'btn btn-default' %>
   </div>
   <% end %>
+</div>
+<div class="row top50">
 </div>
