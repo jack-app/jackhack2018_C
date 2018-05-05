@@ -11,9 +11,11 @@
   text-align: center;
 }
 
+/*
 .hobbies_search li{
   display: inline-block;
 }
+*/
 
 .hobbies_search{
   height: 50px;
@@ -21,7 +23,7 @@
   text-align: center;
   font-size: 16px;
 }
-
+/*
 .hobbies_contents tr:nth-child(2n+1){
    background:#eff6f9;
  }
@@ -29,9 +31,8 @@
 .hobbies_contents tr:nth-child(2n){
   background:#d7f5fb;
 }
-
+*/
 .hobbies_contents{
   padding:0.5% 1%;
   margin: 2% 0 0 0;
-  font-size: 30px;
 }

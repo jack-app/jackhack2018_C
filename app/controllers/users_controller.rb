@@ -5,10 +5,14 @@ class UsersController < ApplicationController
 
   include ApplicationHelper
   def show
-    if logged_in? then
-      @user = current_user
+    if params[:id].nil? then
+      if logged_in? then
+        @user = current_user
+      else
+        redirect_to root_path
+      end
     else
-      redirect_to root_path
+      @user = User.find(params[:id])
     end
   end
 end

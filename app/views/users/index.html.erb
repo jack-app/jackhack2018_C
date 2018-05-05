@@ -1,5 +1,5 @@
 <% @users.each do |u| %>
   <%= image_tag(u.image_url) %>
   <%= u.username %>
-  <%= button_to "詳細", { :action => :show, :id => u.id }, class:'btn btn-default', :method => :get %>
+  <%= button_to "詳細", { action: :show, id: u.id }, class:'btn btn-default', method: :get %>
 <% end %>

@@ -8,16 +8,17 @@
     <div class="row">
       <table class="table table-bordered table-striped">
         <thead>
-          <th class="col-md-4">
+          <th>
             my趣味
           </th>
-          <th class="col-md-1"></th>
         </thead>
         <tbody>
           <% @user.user_hobbies.each do |uh| %>
           <tr>
-            <td><%= uh.hobby.name %></td>
-            <td><%= button_to "削除", { controller: :user_hobbies, action: :destroy, id: uh.id }, class:'btn btn-default' %></td>
+            <th>
+              <%= uh.hobby.name %>
+              <%= button_to "やめる", { controller: :user_hobbies, action: :destroy, id: uh.id }, class:'btn btn-default btn-xs col-md-1 col-md-offset-11' %>
+            </th>
           </tr>
           <% end %>
 
@@ -27,16 +28,17 @@
     <div class="row">
       <table class="table table-bordered table-striped">
         <thead>
-          <th class="col-md-4">
+          <th>
             my称号
           </th>
-          <th class="col-md-1"></th>
         </thead>
         <tbody>
           <% @user.user_titles.each do |ut| %>
           <tr>
-            <td><%= ut.title.name %></td>
-            <td><%= button_to "削除", { controller: :user_titles, action: :destroy, id: ut.id }, class:'btn btn-default' %></td>
+            <td>
+              <%= ut.title.name %>
+              <%= button_to "辞退", { controller: :user_titles, action: :destroy, id: ut.id }, class:'btn btn-default btn-xs col-md-1 col-md-offset-11' %>
+            </td>
           </tr>
           <% end %>
 
