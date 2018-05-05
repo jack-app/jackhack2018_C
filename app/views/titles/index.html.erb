@@ -1,5 +1,6 @@
-<div class="row">
-  <h2> 称号一覧 </h2>
+<div class="row text-center top30">
+  <h1> 数多くの称号を獲得せよ！！ </h2>
+  <!--
   <h3> 挑戦しなければ、君たちの常識は変わらない </h3>
   <p> 頭おかしいクレイジーな人たちが集まる場所として機能することで、<br>
   自分にとって良い趣味を見つけたのに、<br>
@@ -10,20 +11,28 @@
   称号をたくさん取った人に与えられる言葉です。<br>
   ぜひ沢山の称号をとってくださいね。
   </p>
+-->
 </div>
 
 <div class="row">
+  <table class="table table-bordered table-striped">
+    <tbody>
 <% @titles.each do |t| %>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-10">
+      <tr>
+        <td>
+      <div class="col-sm-8">
         <h2>
+          <i class='glyphicon glyphicon-tower'></i>
           <%= t.name %>
-          <% t.user_titles.each do |ut| %>
-          <%= link_to image_tag(ut.user.image_url, height: 30, width: 30), controller: :users, action: :show, id: ut.user.id %>
-          <% end %>
         </h2>
         <p>詳細: <%= t.about %></p>
+      </div>
+      <div class="col-sm-4">
+        <% t.user_titles.each do |ut| %>
+          <%= link_to image_tag(ut.user.image_url, height: 30, width: 30), controller: :users, action: :show, id: ut.user.id %>
+        <% end %>
       </div>
       <!--
       <div class="col-sm-1">
@@ -33,7 +42,11 @@
         <%= button_to "習得", { controller: :user_titles, action: :create, id: t.id }, class:'btn btn-default' %>
       </div>
       -->
+    </td>
+  </tr>
     </div>
   </div>
 <% end %>
+</tbody>
+</table>
 </div>
