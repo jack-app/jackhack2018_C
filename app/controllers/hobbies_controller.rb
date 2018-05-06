@@ -6,6 +6,8 @@ class HobbiesController < ApplicationController
     else
       @hobbies = Hobby.all
     end
+    sort = params[:sort] ? params[:sort] : 'created_at'
+    @hobbies = @hobbies.order(sort).reverse_order
   end
 
   def new
